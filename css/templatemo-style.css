@@ -1,22 +1,24 @@
-/*
-
-Letter Template 
-
-https://templatemo.com/tm-510-letter
-
+/* Letter Template 
+   https://templatemo.com/tm-510-letter
 */
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Ensures padding and border are included in total width/height */
+}
+
 body {
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-	font-size: 24px;
-	font-weight: 300;
-	overflow-x: hidden;
-	
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    margin: 0;
 }
 
 a, button {
-	transition: all 0.3s ease;
-	color: #FFFFFF;
+    transition: all 0.3s ease;
+    color: #FFFFFF;
 }
 
 button:focus {
@@ -24,21 +26,21 @@ button:focus {
 }
 
 a:hover {
-	color: #FFFF00;
-	text-decoration: underline;
+    color: #FFFF00;
+    text-decoration: underline;
 }
 a:focus {
-	text-decoration: none;
-	outline: none;
+    text-decoration: none;
+    outline: none;
 }
 
 h1 {
-	color: #FFFFFF;
-	font-size: 4rem;	
+    color: #FFFFFF;
+    font-size: 4rem;	
 }
 
 p {
-	color: #FFFFFF;	
+    color: #FFFFFF;	
 }
 
 #particles-js {
@@ -51,9 +53,10 @@ p {
 }
 
 .cb-slideshow-text-container {
-    height: 100vh;
+    min-height: 100vh; /* Use min-height to allow growth */
     display: flex;
     align-items: center;
+    padding: 20px; /* Adjust padding as needed */
 }
 
 .container-fluid::after {
@@ -64,19 +67,20 @@ p {
 
 .tm-content {
     z-index: 1001;
+    padding: 0; /* Ensure no extra padding adds height */
 }
 
 .form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: white;
+    color: white;
 }
 .form-control::-moz-placeholder { /* Firefox 19+ */
-  color: white;
+    color: white;
 }
 .form-control:-ms-input-placeholder { /* IE 10+ */
-  color: white;
+    color: white;
 }
 .form-control:-moz-placeholder { /* Firefox 18- */
-  color: white;
+    color: white;
 }
 
 .form-control::placeholder {
@@ -88,28 +92,25 @@ p {
     border-radius: .5rem;
     background-color: transparent;
     border: 1px solid #FFFFFF;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 0.75rem 1.2rem; /* Standard padding */
     font-size: 1.4rem;
     font-weight: 300;
-    padding: 0.75rem 1.2rem;
 }
 
 .form-section {  
     color: #FFFFFF;
     background-color: transparent;
-    margin-bottom: 100px;
-    
+    margin-bottom: 100px; /* This can be adjusted to prevent overflow */
 }
 
 .contact_email {
-	color: #FFFFFF;
+    color: #FFFFFF;
 }
 .tm-btn-subscribe {
-	background-color: #006699;
-	border-radius: .5rem;
+    background-color: #006699;
+    border-radius: .5rem;
     border-color: white;
-	padding: 0.75rem 1.6rem;
+    padding: 0.75rem 1.6rem;
     font-weight: 300;
     font-size: 1.4rem;
     cursor: pointer;
@@ -137,14 +138,15 @@ p {
 }
 
 .footer-link {
-    margin: 20px auto;
+    margin: 20px;
 	font-size: 18px;
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    left: 0;
     color: white;
     text-align:center;
     width:100%;
     z-index: 1001;
-    padding: 10px 0; 
 }
 
 /* Animation */
@@ -176,12 +178,10 @@ p {
     -o-animation: imageAnimation 72s linear infinite 0s;
     -ms-animation: imageAnimation 72s linear infinite 0s;
     animation: imageAnimation 72s linear infinite 0s;
-
 }
 
-
 .cb-slideshow li:nth-child(1) { 
-    background-image: url(../img/letter_bg_01.jpg)
+    background-image: url(../img/letter_bg_01.jpg);
 }
 .cb-slideshow li:nth-child(2) { 
     background-image: url(../img/letter_bg_02.jpg);
@@ -212,28 +212,26 @@ p {
     animation-delay: 60s; 
 }
 
-
 @keyframes imageAnimation { 
-	0% {
-	    opacity: 0;
-	    animation-timing-function: ease-in;
-	}
-	8% {
-	    opacity: 1;
-	    transform: scale(1.15);
-	    animation-timing-function: ease-out;
-	}
-	17% {
-	    opacity: 1;
-	    transform: scale(1.20);
-	}
-	25% {
-	    opacity: 0;
-	    transform: scale(1.40);
-	}
-	100% { opacity: 0 }
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+    8% {
+        opacity: 1;
+        transform: scale(1.15);
+        animation-timing-function: ease-out;
+    }
+    17% {
+        opacity: 1;
+        transform: scale(1.20);
+    }
+    25% {
+        opacity: 0;
+        transform: scale(1.40);
+    }
+    100% { opacity: 0; }
 }
-
 
 @media screen and (max-width: 1140px) { 
     .cb-slideshow li div h3 { 
