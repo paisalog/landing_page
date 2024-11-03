@@ -56,6 +56,12 @@ p {
     align-items: center;
 }
 
+.container-fluid::after {
+    content: "";
+    display: table;
+    clear: both;
+}       
+
 .tm-content {
     z-index: 1001;
 }
@@ -131,15 +137,14 @@ p {
 }
 
 .footer-link {
-    margin: 20px;
+    margin: 20px auto;
 	font-size: 18px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    position: relative;
     color: white;
     text-align:center;
     width:100%;
     z-index: 1001;
+    padding: 10px 0; 
 }
 
 /* Animation */
@@ -231,19 +236,70 @@ p {
 
 
 @media screen and (max-width: 1140px) { 
-    .cb-slideshow li div h3 { font-size: 140px }
+    .cb-slideshow li div h3 { 
+        font-size: 140px; 
+    }
 }
+
 @media screen and (max-width: 600px) { 
-    .cb-slideshow li div h3 { font-size: 80px }
-	.tm-content {
-		margin-top: 80px;
-	}
+    .cb-slideshow li div h3 { 
+        font-size: 80px; 
+    }
+    .tm-content {
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; 
+    }
+
+    h1 {
+        font-size: 2.5rem; 
+    }
+
+    .tm-content {
+        padding: 0.5rem; 
+    }
+
+    .tm-btn-subscribe {
+        padding: 0.5rem 1rem; 
+        margin: 10px auto; 
+        display: block; 
+        font-size: 1.2rem;
+    }
+
+    .footer-link {
+        font-size: 14px; 
+        margin: 10px auto; 
+    }
 }
 
 @media screen and (max-width: 576px) { 
-    .cb-slideshow li div h3 { font-size: 80px }
+    .cb-slideshow li div h3 { 
+        font-size: 60px; 
+    }
 	
-	.tm-btn-subscribe {
-		margin-top: 20px;
-	}
+    .tm-btn-subscribe {
+        padding: 0.5rem 1rem; 
+        margin: 10px auto; 
+        display: block;
+        font-size: 1rem;
+    }
+
+    .footer-link {
+        font-size: 14px; 
+        padding: 10px 0; 
+        margin: 10px auto; 
+    }
+
+    .tm-content {
+        padding: 0.5rem; 
+    }
+
+    .cb-slideshow-text-container {
+        height: auto; 
+        padding: 20px; 
+    }
 }
